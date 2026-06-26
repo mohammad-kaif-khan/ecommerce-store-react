@@ -1,132 +1,100 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 .navbar{
-
-height:75px;
-background:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 50px;
-
-box-shadow:0 3px 10px rgba(0,0,0,.08);
-
-position:sticky;
-top:0;
-z-index:999;
-
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 .logo a{
-
-font-size:30px;
-font-weight:bold;
-text-decoration:none;
-color:#2563eb;
-
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
 }
 
 .search-box{
-
-width:40%;
-display:flex;
-align-items:center;
-gap:10px;
-background:#f5f5f5;
-padding:12px 18px;
-border-radius:8px;
-
+    width: 450px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f3f4f6;
+    padding: 0 18px;
+    border-radius: 50px;
 }
 
 .search-box input{
-
-border:none;
-outline:none;
-background:transparent;
-width:100%;
-font-size:16px;
-
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:15px;
 }
 
 .nav-links{
-
-display:flex;
-align-items:center;
-gap:30px;
-list-style:none;
-
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
 }
 
 .nav-links a{
+    color:#333;
+    font-size:17px;
+    font-weight:500;
+    transition:.3s;
+}
 
-text-decoration:none;
-color:#222;
-font-size:18px;
-font-weight:500;
-
+.nav-links a:hover{
+    color:#2563eb;
 }
 
 .nav-links a.active{
-
-color:#2563eb;
-
+    color:#2563eb;
 }
 
 .cart-icon{
-
-position:relative;
-font-size:22px;
-
+    position:relative;
+    font-size:22px;
 }
 
 .cart-count{
-
-position:absolute;
-top:-10px;
-right:-10px;
-
-width:22px;
-height:22px;
-
-background:red;
-color:white;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:50%;
-
-font-size:12px;
-font-weight:bold;
-
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ef4444;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+    font-weight:bold;
 }
 
 @media(max-width:900px){
 
 .navbar{
-
-flex-direction:column;
-height:auto;
-padding:20px;
-
+    flex-direction:column;
+    height:auto;
+    padding:20px;
 }
 
 .search-box{
-
-width:100%;
-margin:20px 0;
-
+    width:100%;
+    margin:20px 0;
 }
 
 .nav-links{
-
-gap:20px;
-
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 }
