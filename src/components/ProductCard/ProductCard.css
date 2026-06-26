@@ -1,115 +1,19 @@
-.product-card{
-
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-transition:.3s;
-display:flex;
-flex-direction:column;
-
-}
-
-.product-card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.product-image{
-
-height:220px;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:20px;
-background:#fafafa;
-
-}
-
-.product-image img{
-
-max-width:100%;
-max-height:180px;
-object-fit:contain;
-
-}
-
-.product-info{
-
-padding:18px;
-
-}
-
-.product-info h3{
-
-font-size:18px;
-height:45px;
-overflow:hidden;
-margin-bottom:10px;
-
-}
-
-.category{
-
-display:inline-block;
-background:#eff6ff;
-color:#2563eb;
-padding:4px 10px;
-border-radius:20px;
-font-size:13px;
-margin-bottom:10px;
-
-}
-
-.description{
-
-color:#666;
-font-size:14px;
-line-height:22px;
-height:45px;
-overflow:hidden;
-
-}
-
-.price-section{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin:18px 0;
-
-}
-
-.price{
-
-font-size:24px;
-font-weight:bold;
-color:#2563eb;
-
-}
-
-.rating{
-
-font-size:15px;
-
-}
-
-.product-card button{
+.wishlist-btn{
 
 width:100%;
 padding:12px;
-background:#2563eb;
+margin-top:10px;
+background:#ec4899;
 color:white;
 border:none;
 border-radius:8px;
-font-size:16px;
+cursor:pointer;
 transition:.3s;
 
 }
 
-.product-card button:hover{
+.wishlist-btn:hover{
 
-background:#1d4ed8;
+background:#db2777;
 
 }
