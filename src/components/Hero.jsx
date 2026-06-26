@@ -4,28 +4,32 @@ function Hero() {
   return (
     <section className="hero">
 
-      <div className="hero-left">
+      <div className="hero-content">
+
+        <span className="offer">
+          🔥 New Collection 2026
+        </span>
 
         <h1>
-          Discover Amazing Products
+          Best Online Shopping Website
         </h1>
 
         <p>
-          Shop the latest fashion, electronics, jewellery
-          and much more at the best prices.
+          Buy Electronics, Fashion, Jewellery and
+          Men's & Women's Clothing at the best price.
         </p>
 
-        <button>
+        <button className="shop-btn">
           Shop Now
         </button>
 
       </div>
 
-      <div className="hero-right">
+      <div className="hero-image">
 
         <img
-          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
-          alt="Hero"
+          src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700"
+          alt="Shopping"
         />
 
       </div>
