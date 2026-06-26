@@ -1,70 +1,54 @@
-import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import { FaShoppingCart, FaHeart, FaSearch } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import "./Navbar.css";
 
 function Navbar() {
+  const { cartItems = [] } = useContext(CartContext);
+
+  const totalItems = Array.isArray(cartItems)
+    ? cartItems.reduce((total, item) => total + item.quantity, 0)
+    : 0;
+
   return (
     <nav className="navbar">
-
       <div className="logo">
-        <NavLink to="/">
-          <h2>ShopEasy</h2>
-        </NavLink>
+        <NavLink to="/">ShopEasy</NavLink>
       </div>
 
       <div className="search-box">
-        <input
-          type="text"
-          placeholder="Search products..."
-        />
+        <FaSearch />
+        <input type="text" placeholder="Search products..." />
       </div>
 
       <ul className="nav-links">
         <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Home
-          </NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
 
         <li>
-          <NavLink
-            to="/products"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            Products
-          </NavLink>
+          <NavLink to="/products">Products</NavLink>
         </li>
 
         <li>
-          <NavLink
-            to="/wishlist"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            ❤️ Wishlist
+          <NavLink to="/wishlist">
+            <FaHeart />
           </NavLink>
         </li>
 
-        <li>
-          <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
-            🛒 Cart
+        <li className="cart-icon">
+          <NavLink to="/cart">
+            <FaShoppingCart />
           </NavLink>
-        </li>
 
+          {totalItems > 0 && (
+            <span className="cart-count">
+              {totalItems}
+            </span>
+          )}
+        </li>
       </ul>
-
     </nav>
   );
 }
