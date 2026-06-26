@@ -1,0 +1,56 @@
+.details-container{
+max-width:1200px;
+margin:40px auto;
+display:flex;
+gap:50px;
+padding:20px;
+}
+
+.details-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.details-image img{
+width:100%;
+max-width:450px;
+}
+
+.details-content{
+flex:1;
+}
+
+.details-content h1{
+margin-bottom:20px;
+}
+
+.brand{
+color:#2563eb;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+.details-content h2{
+margin:20px 0;
+color:#2563eb;
+}
+
+.details-content button{
+margin-top:30px;
+padding:14px 25px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.details-container{
+flex-direction:column;
+}
+
+}

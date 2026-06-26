@@ -1,19 +1,14 @@
-.wishlist-btn{
-
+.details-btn{
 width:100%;
-padding:12px;
 margin-top:10px;
-background:#ec4899;
+padding:12px;
+background:#16a34a;
 color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
-transition:.3s;
-
 }
 
-.wishlist-btn:hover{
-
-background:#db2777;
-
+.details-btn:hover{
+background:#15803d;
 }
