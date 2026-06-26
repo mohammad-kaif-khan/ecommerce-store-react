@@ -4,20 +4,44 @@ function ProductCard({ product }) {
   return (
     <div className="product-card">
 
-      <img
-        src={product.image}
-        alt={product.title}
-      />
+      <div className="product-image">
 
-      <h3>{product.title}</h3>
+        <img
+          src={product.thumbnail}
+          alt={product.title}
+        />
 
-      <p className="price">
-        ₹ {(product.price * 85).toFixed(0)}
-      </p>
+      </div>
 
-      <button>
-        Add To Cart
-      </button>
+      <div className="product-info">
+
+        <h3>{product.title}</h3>
+
+        <p className="category">
+          {product.category}
+        </p>
+
+        <p className="description">
+          {product.description.substring(0, 60)}...
+        </p>
+
+        <div className="price-section">
+
+          <span className="price">
+            ₹{Math.round(product.price * 85)}
+          </span>
+
+          <span className="rating">
+            ⭐ {product.rating}
+          </span>
+
+        </div>
+
+        <button>
+          Add To Cart
+        </button>
+
+      </div>
 
     </div>
   );

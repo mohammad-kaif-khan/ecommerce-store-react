@@ -10,19 +10,23 @@ function Products() {
 
   useEffect(() => {
 
-    async function fetchProducts() {
+    async function getProducts(){
 
-      try {
+      try{
 
-        const response = await api.get("/products");
+        const response=await api.get("/products");
 
-        setProducts(response.data);
+        setProducts(response.data.products);
 
-      } catch (error) {
+      }
+
+      catch(error){
 
         console.log(error);
 
-      } finally {
+      }
+
+      finally{
 
         setLoading(false);
 
@@ -30,32 +34,36 @@ function Products() {
 
     }
 
-    fetchProducts();
+    getProducts();
 
-  }, []);
+  },[]);
 
-  if (loading) {
+  if(loading){
 
-    return <h2 className="loading">Loading...</h2>;
+    return <h1 className="loading">Loading Products...</h1>
 
   }
 
-  return (
+  return(
 
     <div className="products-container">
 
       {
+
         products.map((product)=>(
+
           <ProductCard
           key={product.id}
           product={product}
           />
+
         ))
+
       }
 
     </div>
 
-  );
+  )
 
 }
 
