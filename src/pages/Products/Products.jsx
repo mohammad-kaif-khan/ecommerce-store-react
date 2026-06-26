@@ -1,32 +1,32 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import "./Products.css";
 
 function Products() {
 
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
 
-    async function getProducts(){
+    async function getProducts() {
 
-      try{
+      try {
 
-        const response=await api.get("/products");
+        const response = await api.get("/products");
 
         setProducts(response.data.products);
+        setFilteredProducts(response.data.products);
 
-      }
-
-      catch(error){
+      } catch (error) {
 
         console.log(error);
 
-      }
-
-      finally{
+      } finally {
 
         setLoading(false);
 
@@ -36,34 +36,47 @@ function Products() {
 
     getProducts();
 
-  },[]);
+  }, []);
 
-  if(loading){
+  useEffect(() => {
 
-    return <h1 className="loading">Loading Products...</h1>
+    const data = products.filter((item) =>
+      item.title.toLowerCase().includes(search.toLowerCase())
+    );
+
+    setFilteredProducts(data);
+
+  }, [search, products]);
+
+  if (loading) {
+
+    return <h2 className="loading">Loading Products...</h2>;
 
   }
 
-  return(
+  return (
+    <>
 
-    <div className="products-container">
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+      />
 
-      {
+      <div className="products-container">
 
-        products.map((product)=>(
+        {
+          filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
+          ))
+        }
 
-          <ProductCard
-          key={product.id}
-          product={product}
-          />
+      </div>
 
-        ))
-
-      }
-
-    </div>
-
-  )
+    </>
+  );
 
 }
 
